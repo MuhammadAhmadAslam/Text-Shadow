@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Shadow Generator</h1>
+        <button id="box" class="box">Text Shadow</button>
+        <div id="main">
+            <div class="card">
+                <label for="h-shadow">Horizontal Shadow</label>
+                <input type="range" id="h-shadow" value="0" min="-50" max="50" oninput="generate()">
+            </div>
+
+            <div class="card">
+                <label for="v-shadow">Vertical Shadow</label>
+                <input type="range" id="v-shadow" value="0" min="-50" max="50" oninput="generate()">
+            </div>
+
+            <div class="card">
+                <label for="b-radius">Blur Radius</label>
+                <input type="range" id="b-radius" value="0" min="0" max="100" oninput="generate()">
+            </div>
+
+            <div class="card">
+                <label for="s-radius">Spread Radius</label>
+                <input type="range" id="s-radius" value="0" min="-50" max="50" oninput="generate()">
+            </div>
+
+            <div class="card">
+                <label for="s-color">Shadow Color</label>
+                <input type="color" id="s-color" value="#000000" oninput="generate()">
+            </div>
+
+            <div class="card">
+                <label for="inset">Inset</label>
+                <input type="checkbox" id="inset" oninput="generate()">
+            </div>
+        </div>
+        <textarea id="copyArea" rows="2" readonly></textarea>
+        <button id="copy" onclick="copyText()">Copy</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
