@@ -1,18 +1,21 @@
 
 function generate() {
-    let hShadow = document.getElementById('h-shadow').value
-    let vShadow = document.getElementById('v-shadow').value
-    let bRadius = document.getElementById('b-radius').value
-    let sRadius = document.getElementById('s-radius').value
-    let sColor = document.getElementById('s-color').value
-    let insetCheck = document.getElementById('inset')
+    let horizontalShadow = document.getElementById('h-shadow').value
+    let verticalShadow = document.getElementById('v-shadow').value
+    let blurRadius = document.getElementById('b-radius').value
+    let shadowColor = document.getElementById('s-color').value
+    // let insetCheck = document.getElementById('inset')
     let box = document.getElementById('box')
     let copyArea = document.getElementById('copyArea')
+    let textColor = document.getElementById('t-color')
 
-    let shadow = `${insetCheck.checked ? 'inset' : ''} ${hShadow}px ${vShadow}px ${bRadius}px ${sRadius}px ${sColor}`
+    let textCOLORS = textColor.value;
+    box.style.color = textCOLORS;
+    // let shadow = `${hShadow}px ${vShadow}px ${bRadius}px ${sRadius}px ${sColor}`
+    let shadow = `${horizontalShadow}px ${verticalShadow}px ${blurRadius}px ${shadowColor}`
     box.style.textShadow = shadow
 
-    copyArea.innerText = `box-shadow:${shadow};`
+    copyArea.innerText = `text-shadow :${shadow};`
 }
 function copyText() {
     let copyText = document.getElementById("copyArea");
